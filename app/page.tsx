@@ -21,6 +21,9 @@ import GlassFlow from "@/components/react-bits/glass-flow";
 import BlurHighlight from "@/components/react-bits/blur-highlight";
 import ClickStack from "@/components/react-bits/click-stack";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const assetPath = (path: string) => `${BASE_PATH}${path}`;
+
 const draftSteps = [
   {
     title: "录入交易意图",
@@ -166,7 +169,7 @@ function DraftWorkbench() {
         <div className="flex items-center gap-2">
           <span className="grid size-10 place-items-center overflow-hidden rounded-[14px] bg-[#eef6ff] shadow-[0_10px_24px_rgba(18,93,255,0.18)]">
             <Image
-              src="/brand/crops/qihe-symbol-transparent.png"
+              src={assetPath("/brand/crops/qihe-symbol-transparent.png")}
               alt="契合 Qihe"
               width={52}
               height={38}
@@ -297,7 +300,7 @@ export default function Home() {
         <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between rounded-full border border-white/60 bg-white/72 px-3 shadow-[0_18px_45px_rgba(23,55,115,0.08)] backdrop-blur-2xl">
           <a href="#top" className="flex items-center rounded-full pl-2 pr-3">
             <Image
-              src="/brand/crops/qihe-wordmark-transparent.png"
+              src={assetPath("/brand/crops/qihe-wordmark-transparent.png")}
               alt="Qihe"
               width={210}
               height={78}
@@ -416,7 +419,7 @@ export default function Home() {
       <section id="templates" className="relative overflow-hidden bg-[#07111f] px-6 py-24 text-white md:px-10 md:py-32">
         <div className="absolute inset-0 opacity-35">
           <GlassFlow
-            imageSrc="/brand/flow-field.svg"
+            imageSrc={assetPath("/brand/flow-field.svg")}
             stripeCount={9}
             angle={-18}
             refraction={0.08}

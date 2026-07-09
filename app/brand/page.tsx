@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const assetPath = (path: string) => `${BASE_PATH}${path}`;
+
 export const metadata = {
   title: "契合 Qihe - 品牌资产",
   description: "契合 Qihe logo 与品牌基础图像。",
@@ -33,7 +36,7 @@ export default function BrandPage() {
           </div>
           <div className="rounded-[34px] border border-[#dce6f2] bg-white p-3 shadow-[0_24px_70px_rgba(27,85,160,0.08)]">
             <Image
-              src="/brand/qihe-new-logo-board.png"
+              src={assetPath("/brand/qihe-new-logo-board.png")}
               alt="契合 Qihe 新 logo 设计稿"
               width={1878}
               height={1272}
